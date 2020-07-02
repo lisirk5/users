@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.ProviderMapper">
+    <select id="findAll" resultType="Provider" parameterType="Provider">
+      SELECT  *   FROM  smbms_provider
+      <where>
+          <trim prefixOverrides="and" >
+          <if test="procode !=null">
+            and procode like #{procode}
+          </if>
+          <if test="proname !=null">
+              and proname like #{proname}
+          </if>
+          </trim>
+      </where>
+    </select>
+    <select id="findAll1"  resultType="Provider" parameterType="Provider">
+        SELECT  *  FROM  smbms_provider where  id=#{id}
+
+           <!-- <if test="id!=null">
+             where  id=#{id}
+            </if>-->
+
+    </select>
+    <select id="findId" resultType="Provider" parameterType="long">
+      SELECT * FROM  smbms_provider where id=#{id}
+    </select>
+    <update id="update" parameterType="Provider">
+      update smbms_provider set  proCode=#{procode},proName=#{proname},proContact=#{procontact},proPhone=#{prophone},ProAddress=#{proaddress},proFax=#{profax},proDesc=#{prodesc}
+    </update>
+</mapper>

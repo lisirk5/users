@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.BillMapper">
+    <select id="findAll" resultType="Bill" parameterType="Bill">
+       SELECT b.* ,p.proName AS providername  FROM smbms_bill b,smbms_provider p WHERE b.providerId=p.id
+       <if test="id !=null">
+          and b.id=#{id}
+       </if>
+       <if test="ispayment !=0">
+           and b.ispayment=#{ispayment}
+       </if>
+       <if test="providername !=null">
+           and providername like #{providername}
+       </if>
+       <if test="productname !=null">
+           and productname like #{productname}
+       </if>
+    </select>
+    <select id="findId" resultType="Bill" parameterType="Bill">
+       SELECT b.* ,p.proName AS providername FROM smbms_bill b,  smbms_provider p  where   p.id=b.providerId and b.id=#{id}
+    </select>
+    <update id="update" parameterType="Bill" >
+        UPDATE smbms_bill SET billCode = #{billcode} ,productName = #{productname} ,productUnit =#{productunit}, productCount =#{productcount}, totalPrice =#{totalprice} ,isPayment=#{ispayment},providerId=#{providerid} WHERE id=#{id}
+    </update>
+    <delete id="del" parameterType="Bill">
+        DELETE FROM smbms_bill WHERE id=#{id}
+    </delete>
+    <insert id="save" parameterType="Bill" >
+        insert into smbms_bill(billCode,productName,productUnit,productcount,totalprice,ispayment,providerId,creationdate) values (#{billcode},#{productname},#{productunit},#{productcount},#{totalprice},#{ispayment},#{providerid},#{creationdate})
+  </insert>
+</mapper>

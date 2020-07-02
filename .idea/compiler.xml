@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot11" />
+        <module name="springboot10" />
+        <module name="springbootzk" />
+        <module name="ssm" />
+        <module name="springboot09" />
+        <module name="springboot08" />
+        <module name="springboot07" />
+        <module name="springboot06" />
+        <module name="springboot05" />
+        <module name="springboot04" />
+        <module name="springboot03" />
+        <module name="springboot02" />
+        <module name="zk" />
+        <module name="spring06" />
+        <module name="springmq" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring06" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring06" options="-parameters" />
+      <module name="springboot01" options="-parameters" />
+      <module name="springboot02" options="-parameters" />
+      <module name="springboot03" options="-parameters" />
+      <module name="springboot04" options="-parameters" />
+      <module name="springboot05" options="-parameters" />
+      <module name="springboot06" options="-parameters" />
+      <module name="springboot07" options="-parameters" />
+      <module name="springboot08" options="-parameters" />
+      <module name="springboot09" options="-parameters" />
+      <module name="springboot10" options="-parameters" />
+      <module name="springboot11" options="-parameters" />
+      <module name="springbootzk" options="-parameters" />
+      <module name="springmq" options="-parameters" />
+      <module name="ssm" options="-parameters" />
+      <module name="zk" options="-parameters" />
+    </option>
+  </component>
+</project>

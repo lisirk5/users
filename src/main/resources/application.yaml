@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  freemarker:
+   template-loader-path: classpath:/templates/
+   charset: utf-8
+   cache: false
+   expose-request-attributes: true
+   expose-session-attributes: true
+   expose-spring-macro-helpers: true
+   suffix: .html
